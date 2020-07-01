@@ -1,0 +1,17 @@
+
+#
+# /etc/fstab
+# Created by anaconda on Sun Dec  2 20:38:01 2018
+#
+# Accessible filesystems, by reference, are maintained under '/dev/disk'
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info
+#
+UUID=b7b1cc0d-aa8d-42a5-bab9-a49e53a68d91 /                       ext4    noatime,nodiratime,discard,defaults        1 1
+UUID=1551c381-afdb-4eb3-8480-d05d88c7ab92 /boot                   ext4    noatime,nodiratime,discard,defaults        1 2
+UUID=41A9-00FA                            /boot/efi               vfat    umask=0077,shortname=winnt 0 2
+UUID=7351bc00-9e7d-4f56-a841-57650d23c4e2 /home                   ext4    noatime,nodiratime,discard,defaults        1 2
+
+#tmpfs /tmp tmpfs defaults 0 0
+#tmpfs /var/tmp tmpfs defaults 0 0
+#tmpfs /var/lock tmpfs defaults 0 0
+#tmpfs /var/spool/postfix tmpfs defaults 0 0
