@@ -1,0 +1,11 @@
+#!/bin/bash
+
+sudo mkdir /mnt/rootfs
+sudo mount rootfs.img /mnt/rootfs
+sudo cp ~/sw/asm_crc32/hello32 /mnt/rootfs/home
+#sudo cp -ar ../busybox/_install/* /mnt/rootfs
+#sudo mkdir /mnt/rootfs/{dev,home,mnt,proc,sys,tmp,var}
+#sudo chown -R -h root:root /mnt/rootfs
+
+#sudo umount /mnt/rootfs
+#sudo rmdir /mnt/rootfs

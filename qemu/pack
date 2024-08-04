@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sudo chown -R -h root:root /mnt/rootfs/home
+sudo umount /mnt/rootfs
+sudo rmdir /mnt/rootfs
