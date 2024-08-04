@@ -56,14 +56,10 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-parse_git_branch() {
- git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
-}
-
 if [ "$color_prompt" = yes ]; then
- PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;34m\]$(parse_git_branch)\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
- PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(parse_git_branch)\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
 unset color_prompt force_color_prompt
 
@@ -109,6 +105,9 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+PROMPT_COMMAND='PS1_CMD1=$(__git_ps1 "(%s)")';
+ PS1='\[\e[38;5;47m\]\u\[\e[38;5;38m\]@\[\e[38;5;47m\]\H\[\e[37m\]:\[\e[38;5;47m\]\w\[\e[38;5;45m\]${PS1_CMD1}\[\e[38;5;35m\]\\$\[\e[37m\] \[\e[0m\]'
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -120,6 +119,4 @@ if ! shopt -oq posix; then
   fi
 fi
 
-PATH="$PATH:/home/sd/bin/"
-alias checkpatch='checkpatch.pl --no-tree -f'
-alias sendpatch='git send-email --from=<addr>'
+PATH=$PATH:/home/wd/programs/sc-dt/riscv-gcc/bin
