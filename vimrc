@@ -1,8 +1,14 @@
+set autoindent
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-set expandtab
+set noexpandtab
 set smarttab
+"next 2 - search case insensitive if type low, if 1 of characketr will be upper - search only it.                              
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
 
 "source ~/themes/
 set t_Co=256
@@ -48,12 +54,34 @@ Plug 'jacoborus/tender.vim'
 Plug 'juneedahamed/vc.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'nvie/vim-flake8'
+Plug 'majutsushi/tagbar'
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Below plugin checks python code
+"Plug 'nvie/vim-flake8'
+"vim-surround make :cs"'(ctrl+s?) to change "->'
+Plug 'tpope/vim-surround'
 Plug 'relastle/bluewery.vim'
 Plug 'simnalamburt/vim-mundo'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+"Plug 'vim-airline/vim-airline-themes', { 'commit': 'b85165844240fe0b9121df487679a320e053abc7' }
+Plug 'mileszs/ack.vim'
+
+"from R.A.
+"actsions and movements
+"make tags during work
+"Plug 'ludovicchabant/vim-gutentags', { 'commit': 'aa67e48f6c071ef4179dc30ac24ddf93e5eb6338' }
+"get off highlight after search finished.
+Plug 'romainl/vim-cool'
+Plug 'tommcdo/vim-exchange'
+Plug 'tpope/vim-endwise'
+
+"appearence
+Plug 'glepnir/oceanic-material'
+
+"Syntax and land specific
+Plug 'petRUShka/vim-opencl'
+
 call plug#end()
 
 " For coc.nvim
